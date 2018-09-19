@@ -8,8 +8,8 @@ const printToDom = (stringToPrint, whereToPrint) => {
 }
 
 const activateDeletes = () => {
-    const deleteButtons = document.getElementsByClassName('deleteButton');
-    for (let i=0;i<deleteButtons.length;i++){
+    const deleteButtons = document.getElementsByClassName('deleteButton'); //why do we not have to put in btn btn-primary deleteButton
+    for (let i=0;i<deleteButtons.length;i++){                               //why are we making functions inside these event listeners
         const element = deleteButtons[i];
         element.addEventListener("click", (e) => {
             //card that the button was on
@@ -22,11 +22,11 @@ const activateDeletes = () => {
 
 
 const buildNewToDoCard = (toDo, notes) => {
-let domString = `<div class="card" style="width: 18rem;">
+let domString = `<div class="card w-25 m-2" style="width: 18rem;">
 <div class="card-body">
   <h5 class="card-title">${toDo}</h5>
   <p class="card-text">${notes}</p>
-  <button href="#" class="btn btn-primary deleteButton">Delete this</button>
+  <button href="#" class="btn btn-danger deleteButton">Delete this</button>
 </div>
 </div>`;
 
